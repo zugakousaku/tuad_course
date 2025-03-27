@@ -1,0 +1,90 @@
+/* p{
+  line-height:1.7em;
+} */
+
+.project-thumb-side{
+  width:3em;
+  height:3em;
+  object-fit: cover
+}
+.square-image {
+  width:100%;
+  height:100%;
+  object-fit: cover; /* この一行を追加するだけ！ */
+}
+
+
+.dropdown-toggle::after{
+  border-top:none;
+}
+
+.comment-edit{
+  /* display: none;  */
+}
+
+.owner-image{
+  /* width: 2.2em;
+  height:2.2em; */
+  width: 4em;
+  height:4em;
+}
+
+.card-img-top{
+  height:10em;
+}
+
+.group-info-button{
+  cursor: pointer;
+}
+
+.tab-upload{
+  display: none;
+}
+
+.tab-select{
+  /* display: none; */
+}
+
+.preset-image-thumbnail{
+  cursor:pointer;
+}
+
+.preset-image-thumbnail{
+  cursor:pointer;
+}
+
+.preset-image-thumbnail:hover{
+  outline:4px solid #074fa7;
+}
+
+
+#member-table th{
+  white-space: nowrap;
+}
+
+.group-list-item:hover{
+  background-color:rgb(244,244,244);
+}
+
+.company{
+  /* word-break: break-all;
+  overflow-wrap:normal;
+  font-size:2em;
+  background-color: red; */
+}
+
+.quest:hover{
+  opacity: 0.8;
+}
+
+.file-download{
+  cursor:pointer;
+}
+
+.file-download:hover{
+  opacity:0.8;
+}
+
+.teacher-list-active{
+  background-color: rgba(255, 255, 255, 0.4);
+}

@@ -1,0 +1,619 @@
+{
+  "user": {
+    "info": {
+      "table": "user",
+      "post-type": "user",
+      "label":"ユーザー"
+    },
+    "form": [
+      {
+        "id": "name",
+        "label": "氏名",
+        "type": "text",
+        "require":"true"
+      },
+      {
+        "id": "number",
+        "label": "学籍番号(学生の場合)",
+        "type": "text",
+        "require":"true"
+      },     
+      {
+        "id": "mail",
+        "label": "メールアドレス",
+        "type": "text",
+        "require":"true"
+      },
+      {
+        "id": "password",
+        "label": "パスワード",
+        "type": "password",
+        "require":"true"
+      },
+      {
+        "id": "roll",
+        "label": "権限（管理者のみ変更可能）",
+        "type": "select",
+        "secure": "true",
+        "require":"true",
+        "option":[
+          {"label":"学生","value":"student"},
+          {"label":"ゲスト","value":"guest"},
+          {"label":"副手","value":"assistant"},
+          {"label":"教員","value":"teacher"},
+          {"label":"管理者","value":"admin"}
+        ]
+      },
+      {
+        "id": "notice-image",
+        "label": "サムネール画像はオリジナルがベストですが、プリセット画像をさらにカスタマイズして使用する場合は、こちらのサイトで作り込んでみてください。https://getavataaars.com/",
+        "type": "notice",
+        "public":"open",
+        "require":"false"
+      },
+      {
+        "id": "image",
+        "label": "サムネール画像",
+        "type": "file_image",
+        "require":"true"
+      },
+      {
+        "id":"contents",
+        "lanel":"コンテンツ",
+        "type":"sub-form",
+        "sub-type":"user-text",
+        "require":"false"
+      }
+    ]
+  },
+  "project": {
+    "info": {
+      "table": "post",
+      "post-type": "project",
+      "label":"プロジェクト"
+    },
+    "form": [
+      {
+        "id": "year",
+        "label": "開講年度",
+        "type": "select-year",
+        "require":"true"        
+      },      
+      {
+        "id": "title",
+        "label": "プロジェクト名",
+        "type": "text",
+        "require":"true"
+      },      
+      {
+        "id": "display",
+        "label": "表示",
+        "type": "select",
+        "require":"true",
+        "option":[
+          {"label":"公開","value":"public"},
+          {"label":"非公開","value":"hidden"},
+          {"label":"トップページにもリストアップ","value":"important"}
+        ]
+      },
+      {
+        "id": "editable",
+        "label": "編集権限",
+        "type": "select",
+        "require":"true",
+        "option":[
+          {"label":"自分のみ編集可能","value":"self"},
+          {"label":"共同編集（教員同士／学生同士）","value":"co-edit"},
+          {"label":"誰でも編集可能","value":"free"}
+        ]
+      },
+      {
+        "id":"contents",
+        "lanel":"コンテンツ",
+        "type":"sub-form",
+        "sub-type":"project-text",
+        "require":"false"
+      },
+      {
+        "id": "image",
+        "label": "サムネール画像",
+        "type": "file_image",
+        "require":"true"
+      }
+    ]
+  },
+  "doc": {
+    "info": {
+      "table": "post",
+      "post-type": "doc",
+      "label":"資料の配布"
+    },
+    "form": [
+      {
+        "id": "title",
+        "label": "投稿タイトル",
+        "type": "text",
+        "require":"true"
+      },
+      {
+        "id": "editable",
+        "label": "編集権限",
+        "type": "select",
+        "require":"true",
+        "option":[
+          {"label":"自分のみ編集可能","value":"self"},
+          {"label":"共同編集（教員同士／学生同士）","value":"co-edit"},
+          {"label":"誰でも編集可能","value":"free"}
+        ]
+      }, 
+      {
+        "id": "display",
+        "label": "表示",
+        "type": "select",
+        "require":"true",
+        "option":[
+          {"label":"グループ内のみ表示","value":"group"},
+          {"label":"全員に告知(常に左側にリスト表示)","value":"important"}
+        ]
+      },
+      {
+        "id":"contents",
+        "lanel":"コンテンツ",
+        "type":"sub-form",
+        "sub-type":"doc-text",
+        "require":"true"
+      },
+      {
+        "id": "image",
+        "label": "サムネール画像",
+        "type": "file_image",
+        "require":"true"
+      },
+      {
+        "id": "notice-file",
+        "label": "添付ファイルにアップロードできるファイルの種類はpdf,zip,doc。上限サイズは256MBになります。巨大なデータはOneDrive等にアップロードし、リンクを本文中にテキストで記載してください。またイラストレーターから書き出すPDFは[最小ファイルサイズ]で保存すると小さくなります。",
+        "type": "notice",
+        "public":"open",
+        "require":"false"
+      },
+      {
+        "id": "file",
+        "label": "添付ファイル",
+        "type": "file",
+        "require":"false"
+      }
+    ]
+  },
+  "comment": {
+    "info": {
+      "table": "post",
+      "post-type": "comment",
+      "label":"コメント"
+    },
+    "form": [
+      {
+        "id":"contents",
+        "lanel":"コンテンツ",
+        "type":"sub-form",
+        "sub-type":"comment-text",
+        "require":"false"
+      }
+    ]
+  },
+  "group": {
+    "info": {
+      "table": "post",
+      "post-type": "group",
+      "label":"フォルダ作成"
+    },
+    "form": [
+      {
+        "id": "title",
+        "label": "フォルダ名",
+        "type": "text",
+        "require":"true"
+      },
+      {
+        "id":"contents",
+        "label":"コンテンツ",
+        "type":"sub-form",
+        "sub-type":"group-text",
+        "require":"false"
+      },
+      {
+        "id": "image",
+        "label": "サムネール画像",
+        "type": "file_image",
+        "require":"true"
+      }
+    ]
+  },
+  "post": {
+    "info": {
+      "table": "post",
+      "post-type": "post",
+      "label":"提出物"
+    },
+    "form": [
+      {
+        "id": "title",
+        "label": "投稿タイトル",
+        "type": "text",
+        "require":"true"
+      },
+      {
+        "id":"contents",
+        "label":"コンテンツ",
+        "type":"sub-form",
+        "sub-type":"post-text",
+        "require":"false"
+      },
+      {
+        "id": "image",
+        "label": "サムネール画像",
+        "type": "file_image",
+        "require":"true"
+      },
+      {
+        "id": "notice-file",
+        "label": "添付ファイルにアップロードできるファイルの種類はpdf,zip,doc。上限サイズは256MBになります。巨大なデータはOneDrive等にアップロードし、リンクを本文中にテキストで記載してください。またイラストレーターから書き出すPDFは[最小ファイルサイズ]で保存すると小さくなります。",
+        "type": "notice",
+        "public":"open",
+        "require":"false"
+      },
+      {
+        "id": "file",
+        "label": "添付ファイル",
+        "type": "file",
+        "require":"false"
+      }
+    ]
+  },
+  "annual": {
+    "info": {
+      "table": "post",
+      "post-type": "annual",
+      "label":"年度の設定"
+    },
+    "form": [
+      {
+        "id": "year",
+        "label": "対象となる年度",
+        "type": "select-year",
+        "require":"true"        
+      },    
+      {
+        "id":"contents",
+        "label":"コンテンツ",
+        "type":"sub-form",
+        "sub-type":"annual-data",
+        "require":"false"
+      }
+    ]
+  },
+  "job": {
+    "info": {
+      "table": "post",
+      "post-type": "job",
+      "label":"就職情報"
+    },
+    "form": [
+      {
+        "id": "title",
+        "label": "投稿タイトル",
+        "type": "text",
+        "require":"true"
+      },
+      {
+        "id": "year",
+        "label": "年度",
+        "type": "select-year",
+        "require":"true"        
+      },
+      {
+        "id": "display",
+        "label": "表示",
+        "type": "select",
+        "require":"true",
+        "option":[
+          {"label":"公開","value":"public"},
+          {"label":"非公開","value":"hidden"},
+          {"label":"トップページに表示","value":"important"}
+        ]
+      },
+      {
+        "id": "editable",
+        "label": "編集権限",
+        "type": "select",
+        "require":"true",
+        "option":[
+          {"label":"自分のみ編集可能","value":"self"},
+          {"label":"共同編集（教員同士／学生同士）","value":"co-edit"},
+          {"label":"誰でも編集可能","value":"free"}
+        ]
+      },
+      {
+        "id":"contents",
+        "lanel":"コンテンツ",
+        "type":"sub-form",
+        "sub-type":"job-text",
+        "require":"true"
+      },
+      {
+        "id": "image",
+        "label": "サムネール画像",
+        "type": "file_image",
+        "require":"true"
+      },
+      {
+        "id": "notice-file",
+        "label": "添付ファイルにアップロードできるファイルの種類はpdf,zip,doc。上限サイズは256MBになります。巨大なデータはOneDrive等にアップロードし、リンクを本文中にテキストで記載してください。またイラストレーターから書き出すPDFは[最小ファイルサイズ]で保存すると小さくなります。",
+        "type": "notice",
+        "public":"open",
+        "require":"false"
+      },
+      {
+        "id": "file",
+        "label": "添付ファイル",
+        "type": "file",
+        "require":"false"
+      }
+    ]
+  },
+  "share": {
+    "info": {
+      "table": "post",
+      "post-type": "share",
+      "label":"共有"
+    },
+    "form": [
+      {
+        "id": "title",
+        "label": "投稿タイトル",
+        "type": "text",
+        "require":"true"
+      },
+      {
+        "id": "display",
+        "label": "表示",
+        "type": "select",
+        "require":"true",
+        "option":[
+          {"label":"公開","value":"public"},
+          {"label":"非公開","value":"hidden"},
+          {"label":"トップページに表示","value":"important"}
+        ]
+      },
+      {
+        "id": "editable",
+        "label": "編集権限",
+        "type": "select",
+        "require":"true",
+        "option":[
+          {"label":"自分のみ編集可能","value":"self"},
+          {"label":"共同編集（教員同士／学生同士）","value":"co-edit"},
+          {"label":"誰でも編集可能","value":"free"}
+        ]
+      },
+      {
+        "id":"contents",
+        "lanel":"コンテンツ",
+        "type":"sub-form",
+        "sub-type":"share-text",
+        "require":"true"
+      },
+      {
+        "id": "image",
+        "label": "サムネール画像",
+        "type": "file_image",
+        "require":"true"
+      },
+      {
+        "id": "notice-file",
+        "label": "添付ファイルにアップロードできるファイルの種類はpdf,zip,doc。上限サイズは256MBになります。巨大なデータはOneDrive等にアップロードし、リンクを本文中にテキストで記載してください。またイラストレーターから書き出すPDFは[最小ファイルサイズ]で保存すると小さくなります。",
+        "type": "notice",
+        "public":"open",
+        "require":"false"
+      },
+      {
+        "id": "file",
+        "label": "添付ファイル",
+        "type": "file",
+        "require":"false"
+      }
+    ]
+  },
+  "office": {
+    "info": {
+      "table": "post",
+      "post-type": "office",
+      "label":"準備室情報"
+    },
+    "form": [
+      {
+        "id": "title",
+        "label": "投稿タイトル",
+        "type": "text",
+        "require":"true"
+      },
+      {
+        "id": "display",
+        "label": "表示",
+        "type": "select",
+        "require":"true",
+        "option":[
+          {"label":"公開","value":"public"},
+          {"label":"非公開","value":"hidden"},
+          {"label":"トップページに表示","value":"important"}
+        ]
+      },
+      {
+        "id": "editable",
+        "label": "編集権限",
+        "type": "select",
+        "require":"true",
+        "option":[
+          {"label":"自分のみ編集可能","value":"self"},
+          {"label":"共同編集（教員同士／学生同士）","value":"co-edit"},
+          {"label":"誰でも編集可能","value":"free"}
+        ]
+      },
+      {
+        "id": "year",
+        "label": "表示年度",
+        "type": "select-year",
+        "require":"true"        
+      },
+      {
+        "id":"contents",
+        "lanel":"コンテンツ",
+        "type":"sub-form",
+        "sub-type":"office-text",
+        "require":"true"
+      },
+      {
+        "id": "image",
+        "label": "サムネール画像",
+        "type": "file_image",
+        "require":"true"
+      },
+      {
+        "id": "notice-file",
+        "label": "添付ファイルにアップロードできるファイルの種類はpdf,zip,doc。上限サイズは256MBになります。巨大なデータはOneDrive等にアップロードし、リンクを本文中にテキストで記載してください。またイラストレーターから書き出すPDFは[最小ファイルサイズ]で保存すると小さくなります。",
+        "type": "notice",
+        "public":"open",
+        "require":"false"
+      },
+      {
+        "id": "file",
+        "label": "添付ファイル",
+        "type": "file",
+        "require":"false"
+      }
+    ]
+  },
+  "company": {
+    "info": {
+      "table": "post",
+      "post-type": "company",
+      "label":"企業シート"
+    },
+    "form": [
+      {
+        "id": "title",
+        "label": "企業名",
+        "type": "text",
+        "require":"true"
+      },
+      {
+        "id": "display",
+        "label": "表示",
+        "type": "select",
+        "require":"true",
+        "option":[
+          {"label":"公開","value":"public"},
+          {"label":"非公開","value":"hidden"}
+        ]
+      },
+      {
+        "id": "editable",
+        "label": "編集権限",
+        "type": "select",
+        "require":"true",
+        "option":[
+          {"label":"自分のみ編集可能","value":"self"},
+          {"label":"共同編集（教員同士／学生同士）","value":"co-edit"},
+          {"label":"誰でも編集可能","value":"free"}
+        ]
+      },
+      {
+        "id":"contents",
+        "lanel":"コンテンツ",
+        "type":"sub-form",
+        "sub-type":"company-text",
+        "require":"true"
+      },
+      {
+        "id": "image",
+        "label": "サムネール画像",
+        "type": "file_image",
+        "require":"true"
+      },
+      {
+        "id": "notice-file",
+        "label": "添付ファイルにアップロードできるファイルの種類はpdf,zip,doc。上限サイズは256MBになります。巨大なデータはOneDrive等にアップロードし、リンクを本文中にテキストで記載してください。またイラストレーターから書き出すPDFは[最小ファイルサイズ]で保存すると小さくなります。",
+        "type": "notice",
+        "public":"open",
+        "require":"false"
+      },
+      {
+        "id": "file",
+        "label": "添付ファイル",
+        "type": "file",
+        "require":"false"
+      }
+    ]
+  },
+  "personal": {
+    "info": {
+      "table": "post",
+      "post-type": "personal",
+      "label":"企業シート"
+    },
+    "form": [
+      {
+        "id": "title",
+        "label": "タイトル",
+        "type": "text",
+        "require":"true"
+      },
+      {
+        "id": "display",
+        "label": "表示",
+        "type": "select",
+        "require":"true",
+        "option":[
+          {"label":"公開","value":"public"},
+          {"label":"非公開","value":"hidden"}
+        ]
+      },
+      {
+        "id": "editable",
+        "label": "編集権限",
+        "type": "select",
+        "require":"true",
+        "option":[
+          {"label":"自分のみ編集可能","value":"self"},
+          {"label":"共同編集（教員同士／学生同士）","value":"co-edit"},
+          {"label":"誰でも編集可能","value":"free"}
+        ]
+      },
+      {
+        "id":"contents",
+        "lanel":"コンテンツ",
+        "type":"sub-form",
+        "sub-type":"personal-text",
+        "require":"true"
+      },
+      {
+        "id": "image",
+        "label": "サムネール画像",
+        "type": "file_image",
+        "require":"true"
+      },
+      {
+        "id": "notice-file",
+        "label": "添付ファイルにアップロードできるファイルの種類はpdf,zip,doc。上限サイズは256MBになります。巨大なデータはOneDrive等にアップロードし、リンクを本文中にテキストで記載してください。またイラストレーターから書き出すPDFは[最小ファイルサイズ]で保存すると小さくなります。",
+        "type": "notice",
+        "public":"open",
+        "require":"false"
+      },
+      {
+        "id": "file",
+        "label": "添付ファイル",
+        "type": "file",
+        "require":"false"
+      }
+    ]
+  }
+}

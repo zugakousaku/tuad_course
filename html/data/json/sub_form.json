@@ -1,0 +1,563 @@
+{
+  "project-text": {
+    "info":{
+      "label":"受講レポート"
+    },
+    "form": [
+      {
+        "id": "text",
+        "label": "概要",
+        "type": "textarea",
+        "public":"open"
+      },
+      {
+        "id": "grad-chart",
+        "label": "４年生の進路グラフを表示",
+        "type": "select",
+        "public":"open",
+        "require":"true",
+        "option":[
+          {"label":"表示しない","value":"false"},
+          {"label":"表示する","value":"true"}
+        ]
+      },
+      {
+        "id": "period",
+        "label": "開講期間",
+        "label-layout": "開講期間",
+        "type": "select",
+        "public":"open",
+        "option":[
+          {"label":"クォーター1期","value":"q1"},
+          {"label":"クォーター2期","value":"q2"},
+          {"label":"クォーター3期","value":"q3"},
+          {"label":"クォーター4期","value":"q4"},
+          {"label":"セメスター前期","value":"s1"},
+          {"label":"セメスター後期","value":"s2"}
+        ]
+      },
+      {
+        "id": "start-end",
+        "label": "開始日と終了日",
+        "label-layout": "開始日と終了日",
+        "type": "range-date",
+        "public":"open"
+      }
+    ]
+  },
+  "post-text": {
+    "info":{
+        "label":"受講レポート"
+    },
+    "form": [
+      {
+        "id": "text",
+        "label": "作業の進捗や授業の感想など",
+        "type": "textarea",
+        "public":"open",
+        "require":"true"
+
+      }
+    ]
+  },
+  "group-text": {
+    "info":{
+      "label":"フォルダ情報"
+    },  
+    "form": [
+      {
+        "id": "text",
+        "label": "提出物についての説明。学生が提出する際に表示されます。",
+        "type": "textarea",
+        "public":"open"
+      },
+      {
+        "id": "submit-type",
+        "label": "学生が提出するもの",
+        "type": "select",
+        "public":"open",
+        "require":"true",
+        "option":[
+          {"label":"受講レポート","value":"post-text"},
+          {"label":"卒制・就活レポート","value":"grad-text"}
+        ]
+      },
+      {
+        "id": "order",
+        "label": "リストアップの優先順位",
+        "type": "select",
+        "public":"open",
+        "require":"true",
+        "option":[
+          {"label":"1 最優先","value":"1"},
+          {"label":"2","value":"2"},
+          {"label":"3","value":"3"},
+          {"label":"4","value":"4"},
+          {"label":"5","value":"5"},
+          {"label":"6","value":"6"},
+          {"label":"7","value":"7"},
+          {"label":"8","value":"8"},
+          {"label":"9","value":"9"},
+          {"label":"10","value":"10"}
+        ]
+      },
+      {
+        "id": "border",
+        "label": "下に余白を追加",
+        "type": "select",
+        "public":"open",
+        "require":"true",
+        "option":[
+          {"label":"なし","value":"none"},
+          {"label":"下線","value":"border"}
+        ]
+      }
+    ]
+  },
+  "doc-text": {
+    "info":{
+    "label":"資料"
+    },
+    "form": [
+      {
+        "id": "text",
+        "label": "資料の説明",
+        "label-layout": "資料について",
+        "type": "textarea",
+        "public":"open"
+      },
+      {
+        "id": "youtube",
+        "label": "YoutubeやVimeoのリンク",
+        "label-layout": "動画",
+        "type": "youtube",
+        "public":"open"
+      }
+    ]
+  },
+  "user-text": {
+    "info":{
+      "label":"プロフィール"
+    },
+    "form": [
+      {
+        "id": "copy",
+        "label": "特性や習性、あだ名などを一言で",
+        "label-layout": "私を一言で言うと",
+        "type": "text",
+        "public":"open",
+        "require":"true"
+      },
+      {
+        "id": "select-wip-grad",
+        "label": "所属ゼミ",
+        "label-layout": "完成度",
+        "type": "select",
+        "public":"open",
+        "require":"true",
+        "option":[
+          {"label":"未配属","value":"none"},
+          {"label":"岩井ゼミ","value":"iwai"},
+          {"label":"加藤ゼミ","value":"katou"},
+          {"label":"鹿野ゼミ","value":"kano"},
+          {"label":"中村ゼミ","value":"nakamura"},
+          {"label":"林ゼミ","value":"hayashi"},
+          {"label":"屋代ゼミ","value":"yashiro"},
+          {"label":"山本ゼミ","value":"yamamoto"}
+        ]
+      },
+      {
+        "id": "text",
+        "label": "自己紹介（得意・苦手・推しなどなんでも）",
+        "label-layout": "プロフィール",
+        "type": "textarea",
+        "public":"open",
+        "require":"true"
+      },
+      {
+        "id": "tag",
+        "label": "私を表すハッシュタグ（#登山 #マーベル #デザイン）",
+        "label-layout": "ハッシュタグ",
+        "type": "textarea",
+        "public":"open"
+      }
+    ]
+  },
+  "comment-text": {
+    "form": [
+      {
+        "id": "text",
+        "label": "コメント",
+        "type": "textarea",
+        "public":"open",
+        "require":"true"
+      }
+    ]
+  },
+  "annual-data": {
+    "info":{
+    "label":"年度の設定"
+  },
+    "form": [
+      {
+        "id": "grad",
+        "label": "卒業制作の授業",
+        "type": "select-grad",
+        "public":"open"
+      }
+    ]
+  },
+  "grad-text": {
+    "info":{
+      "label":"卒業制作の進捗シート"
+    },  
+    "form": [
+      {
+        "id": "select-wip-grad",
+        "label": "卒業制作の完成度",
+        "label-layout": "完成度",
+        "type": "select",
+        "public":"open",
+        "require":"true",
+        "option":[
+          {"label":"0%","value":"none"},
+          {"label":"10%","value":"10"},
+          {"label":"20%","value":"20"},
+          {"label":"30%","value":"30"},
+          {"label":"40%","value":"40"},
+          {"label":"50%","value":"50"},
+          {"label":"60%","value":"60"},
+          {"label":"70%","value":"70"},
+          {"label":"80%","value":"80"},
+          {"label":"90%","value":"90"},
+          {"label":"100%","value":"100"}
+        ]
+      },
+      {
+        "id": "text",
+        "label": "卒業制作の進捗を具体的に記述。<br>一言メモではなく、他者が理解できるように分かりやすく状況を書く。150〜250字程度。（公開されます）",
+        "label-layout": "進捗状況",
+        "type": "textarea",
+        "public":"open",
+        "require":"true"
+      },
+      {
+        "id": "select-job",
+        "label": "進路（公開されません）",
+        "label-layout": "進路",
+        "type": "select",
+        "public":"secret",
+        "require":"true",
+        "option":[
+          {"label":"就職する","value":"job-work"},
+          {"label":"就職しない（自営業など）","value":"job-freelance"},
+          {"label":"進学する","value":"job-school"}
+        ]
+      },
+      {
+        "id": "select-naitei",
+        "label": "内定（公開されません）",
+        "label-layout": "内定",
+        "type": "select",
+        "public":"secret",
+        "require":"true",
+        "option":[
+          {"label":"内定なし","value":"job-minaitei"},
+          {"label":"すでに内定を取れている","value":"job-naitei"}
+        ]
+      },
+      {
+        "id": "select-wip-job",
+        "label": "就職活動／進路（公開されません）",
+        "label-layout": "就職活動／進路",
+        "type": "select",
+        "public":"secret",
+        "require":"true",
+        "option":[
+          {"label":"1.開始していない","value":"job-wip-danger"},
+          {"label":"2.履歴書・ポートフォリオ制作中","value":"job-wip-profile"},
+          {"label":"3.企業へエントリー済み","value":"job-wip-entry"},
+          {"label":"4.面接まで進んだ","value":"job-wip-judge"},
+          {"label":"5.内定取れたが就活は継続中","value":"job-wip-success"},
+          {"label":"6.就活完了","value":"job-wip-complete"}
+        ]
+      },
+      {
+        "id": "text-job",
+        "label": "就活の状況を企業名を含めて具体的に記述。<br>就活を開始していない、停止している方はその理由を記載してください。（公開されません）",
+        "type": "textarea",
+        "public":"secret",
+        "require":"true"
+      },
+      {
+        "id": "notice-image",
+        "label": "イメージ画像はプリセットを使用せず、卒制の進捗を示す画像をアップロードしてください。（作成中のスクリーンショットやロケハンなどの画像など）",
+        "type": "notice",
+        "public":"open",
+        "require":"false"
+      }
+
+    ]
+  },
+  "job-text": {
+    "info":{
+    "label":"就活情報"
+    },
+    "form": [
+      {
+        "id": "text",
+        "label": "本文",
+        "label-layout": "進路情報",
+        "type": "textarea",
+        "public":"open",
+        "require":"true"
+
+      },
+      {
+        "id": "tag",
+        "label": "ハッシュタグ（#インターンシップ #説明会）",
+        "label-layout": "ハッシュタグ（#インターンシップ #説明会）",
+        "type": "textarea",
+        "public":"open"
+      }
+    ]
+  },
+  "share-text": {
+    "info":{
+    "label":"おすすめ共有"
+    },
+    "form": [
+      {
+        "id": "text",
+        "label": "おすすめポイント",
+        "label-layout": "ここがポイント！",
+        "type": "textarea",
+        "public":"open",
+        "require":"true"
+      },
+      {
+        "id": "youtube",
+        "label": "YoutubeやVimeoのリンク",
+        "label-layout": "動画",
+        "type": "youtube",
+        "public":"open"
+      },
+      {
+        "id": "tag",
+        "label": "ハッシュタグ（#3DCG #映画 #グラフィック）",
+        "label-layout": "ハッシュタグ",
+        "type": "textarea",
+        "public":"open"
+      }
+    ]
+  },
+  "office-text": {
+    "info":{
+    "label":"準備室情報"
+    },
+    "form": [
+      {
+        "id": "text",
+        "label": "本文",
+        "label-layout": "本文",
+        "type": "textarea",
+        "public":"open"
+      },
+      {
+        "id": "tag",
+        "label": "ハッシュタグ（#インターンシップ #説明会）",
+        "label-layout": "ハッシュタグ（#インターンシップ #説明会）",
+        "type": "textarea",
+        "public":"open"
+      }
+    ]
+  },
+  "company-text": {
+    "info":{
+    "label":"企業シート（投稿者の名前は公開されません）"
+    },
+    "form": [
+      {
+        "id": "text",
+        "label": "どんな企業？",
+        "label-layout": "どんな企業？",
+        "type": "textarea",
+        "public":"open",
+        "require":"true"
+      },
+      {
+        "id": "url",
+        "label": "URL",
+        "label-layout": "URL",
+        "type": "text",
+        "public":"open",
+        "require":"true"
+      },
+      {
+        "id": "gyoukai",
+        "label": "業界・業種",
+        "label-layout": "業界・業種",
+        "type": "text",
+        "public":"open",
+        "require":"true"
+      },
+      {
+        "id": "shihonkin",
+        "label": "資本金",
+        "label-layout": "資本金",
+        "type": "select",
+        "public":"open",
+        "require":"true",
+        "option":[
+          {"label":"500万円未満","value":"shihonkin-1"},
+          {"label":"500万円 - 1000万円","value":"shihonkin-500"},
+          {"label":"1000万円 - 3000万円","value":"shihonkin-1000"},
+          {"label":"3000万円 - 5000万円","value":"shihonkin-3000"},
+          {"label":"5000万円以上","value":"shihonkin-5000"}
+        ]
+      },
+      {
+        "id": "jyugyoin",
+        "label": "従業員数",
+        "label-layout": "従業員数",
+        "type": "select",
+        "public":"open",
+        "require":"true",
+        "option":[
+          {"label":"10人以下","value":"jyugyoin-1"},
+          {"label":"10人 - 50人","value":"jyugyoin-50"},
+          {"label":"50人 - 100人","value":"jyugyoin-100"},
+          {"label":"100人 - 500人","value":"jyugyoin-500"},
+          {"label":"500人 - 1000人","value":"jyugyoin-1000"},
+          {"label":"1000人以上","value":"jyugyoin-10000"}
+        ]
+      },
+      {
+        "id": "area",
+        "label": "本社所在地",
+        "label-layout": "本社所在地",
+        "type": "select",
+        "public":"open",
+        "require":"true",
+        "option":[
+          {"label":"東京","value":"area-tokyo"},
+          {"label":"山形","value":"area-yamagata"},
+          {"label":"宮城","value":"area-miyagi"},
+          {"label":"関西","value":"area-kansai"},
+          {"label":"その他","value":"area-etc"}
+        ]
+      },
+      {
+        "id": "schedule",
+        "label": "採用スケジュール（早期選考やインターンの有無、日付など具体的に）",
+        "label-layout": "採用スケジュール（早期選考やインターンの有無、日付など具体的に）",
+        "type": "textarea",
+        "public":"open",
+        "require":"true"
+      },
+      {
+        "id": "tag",
+        "label": "ハッシュタグ（#手がけた作品など）",
+        "label-layout": "ハッシュタグ（#手がけた作品など）",
+        "type": "textarea",
+        "public":"open"
+      }
+    ]
+  },
+  "personal-text": {
+    "info":{
+    "label":"パーソナルシート（公開されません／専任教員のみ閲覧）"
+    },
+    "form": [
+      {
+        "id": "target",
+        "label": "提出を想定した企業名（複数でも可）",
+        "label-layout": "提出を想定した企業名（複数でも可）",
+        "type": "textarea",
+        "public":"open",
+        "require":"true"
+      },
+      {
+        "id": "section-company",
+        "label": "企業や業界について",
+        "label-layout": "企業や業界について",
+        "type": "notice",
+        "public":"open",
+        "require":"false"
+      },
+      {
+        "id": "company-gyokai",
+        "label": "この業界を志望する理由は何ですか?(200字程度)",
+        "label-layout": "この業界を志望する理由は何ですか?(200字程度)",
+        "type": "textarea",
+        "public":"open",
+        "require":"true"
+      },
+      {
+        "id": "company-goal",
+        "label": "志望動機と、当社に入社してやりたいことを具体的に教えてください(200字程度)",
+        "label-layout": "当社に入社してやりたいことを具体的に教えてください(200字程度)",
+        "type": "textarea",
+        "public":"open",
+        "require":"true"
+      },
+      {
+        "id": "section-study",
+        "label": "大学での学びや生活について",
+        "label-layout": "大学での学びや生活について",
+        "type": "notice",
+        "public":"open",
+        "require":"false"
+      },
+      {
+        "id": "study-tokui",
+        "label": "得意な科目・分野は何ですか?それにどのように取り組みましたか？(200字程度)",
+        "label-layout": "得意な科目・分野は何ですか?(200字程度)",
+        "type": "textarea",
+        "public":"open",
+        "require":"true"
+      },
+      {
+        "id": "study-gakugai",
+        "label": "学生時代に最も打ち込んだ学業以外のことは何ですか?(200字程度)",
+        "label-layout": "学生時代に最も打ち込んだ学業以外のことは何ですか?(200字程度)",
+        "type": "textarea",
+        "public":"open",
+        "require":"true"
+      },
+      {
+        "id": "section-self",
+        "label": "自己分析",
+        "label-layout": "自己分析",
+        "type": "notice",
+        "public":"open",
+        "require":"false"
+      },
+      {
+        "id": "self-kanji",
+        "label": "自分をPRする内容を漢字一文字で表現し、理由も記述して下さい。(200字程度)",
+        "label-layout": "自分をPRする内容を漢字一文字で表現し、理由も記述して下さい。(200字程度)",
+        "type": "textarea",
+        "public":"open",
+        "require":"true"
+      },
+      {
+        "id": "self-tsuyomi",
+        "label": "あなたの強みはなんですか？(200字程度)",
+        "label-layout": "あなたの強みはなんですか？(200字程度)",
+        "type": "textarea",
+        "public":"open",
+        "require":"true"
+      },
+      {
+        "id": "self-fusoku",
+        "label": "自分に不足している事と、それを克服するために必要な事(200字程度)",
+        "label-layout": "自分に不足していると事と、それを克服するために必要な事(200字程度)",
+        "type": "textarea",
+        "public":"open",
+        "require":"true"
+      }
+    ]
+  }
+
+}
